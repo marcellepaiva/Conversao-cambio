@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      APP ATIVIDADE
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <form #formulario="ngForm">
+    <br>
+    <h4>Conversão Dollar/Euro p/ Real</h4>
+
+    <ion-item>
+      <ion-label>Valor $/€: </ion-label>
+      <ion-input name="vconv" ngModel></ion-input>
+    </ion-item><br>
+    <ion-item>
+      <ion-label>Taxa de Dólar: </ion-label>
+      <ion-input disabled value="{{cambio.USDBRL.ask}}"></ion-input>
+    </ion-item><br>
+    <ion-item>
+      <ion-label>Taxa de Euro: </ion-label>
+      <ion-input disabled value="{{cambio.EURBRL.ask}}"></ion-input>
+    </ion-item><br>
+
+    <ion-button (click)="convdr(formulario)">Dólar p/ Real</ion-button>
+    <ion-button (click)="conver(formulario)">Euro p/ Real</ion-button>
+
+    <br><br>
+    <ion-item>
+      <ion-label>Valor $ p/ R$: </ion-label>
+      <ion-input value="{{resultado}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Valor € p/ R$: </ion-label>
+      <ion-input value="{{resultado3}}"></ion-input>
+    </ion-item>
+    <br>
+    
+    <h4>Conversão Real p/ Dollar/Euro</h4>
+    
+    <br>
+    <ion-item>
+      <ion-label>Valor R$: </ion-label>
+      <ion-input name="vreal" ngModel></ion-input>
+    </ion-item><br>
+    <ion-item>
+      <ion-label>Taxa de Dólar: </ion-label>
+      <ion-input disabled value="{{cambio.USDBRL.ask}}"></ion-input>
+    </ion-item><br>
+    <ion-item>
+      <ion-label>Taxa de Euro: </ion-label>
+      <ion-input disabled value="{{cambio.EURBRL.ask}}"></ion-input>
+    </ion-item><br>
+
+    <ion-button (click)="convrd(formulario)">Real p/ Dólar</ion-button>
+    <ion-button (click)="convre(formulario)">Real p/ Euro</ion-button>
+
+    <br><br>
+    <ion-item>
+      <ion-label>Valor $: </ion-label>
+      <ion-input value="{{resultado1}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Valor €: </ion-label>
+      <ion-input value="{{resultado2}}"></ion-input>
+    </ion-item>
+
+  </form>
+</ion-content>
